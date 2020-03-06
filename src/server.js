@@ -33,11 +33,17 @@ app.use(
     saveUninitialized: false
   })
 );
+// app.use("/api", routes);
+
 app.use("/post", postRoutes);
 app.use("/post/private", postPrivateRoutes);
 app.use("/user", userRoutes);
 app.use("/auth", authRouter);
 app.use(cors());
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 
 app.listen(port, host, () =>
   console.log(`Blog app listening on ${host}:${port}`)
