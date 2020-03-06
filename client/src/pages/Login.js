@@ -2,8 +2,8 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 
 export const Login = withRouter(({ history, isLoggedIn, setIsLoggedIn }) => {
-  const [email, setEmail] = React.useState("assel@gmail.com");
-  const [password, setPassword] = React.useState("pass");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
   const [errors, setErrors] = React.useState([]);
 
   const handleSubmit = event => {
