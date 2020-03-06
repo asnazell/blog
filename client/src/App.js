@@ -55,11 +55,9 @@ export const App = () => {
         </Route>
         <Route exact path="/register" component={Register} />
         {isLoggedIn === "1" && <Route exact path="/new" component={NewPost} />}
-        {isLoggedIn === "1" && (
-          <Route exact path="/post/:id" component={isLoggedIn}>
-            <Post isLoggedIn={isLoggedIn} />
-          </Route>
-        )}
+        <Route exact path="/post/:id" component={isLoggedIn}>
+          <Post isLoggedIn={isLoggedIn} />
+        </Route>
         <Route exact path="/update/:id" component={PostEdit} />
         <Route exact path="/upload" component={UploadFiles} />
         <Footer />
