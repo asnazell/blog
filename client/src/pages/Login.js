@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 
 export const Login = withRouter(({ history, isLoggedIn, setIsLoggedIn }) => {
-  const [user, setUser] = React.useState("assel@gmail.com");
+  const [email, setEmail] = React.useState("assel@gmail.com");
   const [password, setPassword] = React.useState("pass");
   const [errors, setErrors] = React.useState([]);
 
@@ -37,7 +37,7 @@ export const Login = withRouter(({ history, isLoggedIn, setIsLoggedIn }) => {
     myHeaders.append("credentials", "same-origin");
 
     const urlencoded = new URLSearchParams();
-    urlencoded.append("username", user);
+    urlencoded.append("email", email);
     urlencoded.append("password", password);
 
     const requestOptions = {
@@ -60,7 +60,7 @@ export const Login = withRouter(({ history, isLoggedIn, setIsLoggedIn }) => {
 
         if (data.status === 404) {
           console.log("user not found");
-          if (user !== "") setErrors(["404 user not found"]);
+          if (email !== "") setErrors(["404 user not found"]);
         }
       })
       .catch(e => {
@@ -79,7 +79,7 @@ export const Login = withRouter(({ history, isLoggedIn, setIsLoggedIn }) => {
           setErrors([]);
         } else {
           console.log("error logging out");
-          if (user !== "") setErrors(["Error loggin out"]);
+          if (email !== "") setErrors(["Error loggin out"]);
         }
       })
       .catch(e => {
@@ -112,17 +112,17 @@ export const Login = withRouter(({ history, isLoggedIn, setIsLoggedIn }) => {
           <h3>Login</h3>
         </div>
         <div className="form-field">
-          <label htmlFor="username" className="form-label">
-            Username
+          <label htmlFor="email" className="form-label">
+            Email
           </label>
           <input
-            placeholder="Username.."
+            placeholder="Email.."
             className="form-input"
             type="text"
-            id="user"
-            name="user"
-            value={user}
-            onChange={event => setUser(event.target.value)}
+            id="email"
+            name="email"
+            value={email}
+            onChange={event => setEmail(event.target.value)}
           />
         </div>
         <div className="form-field">
