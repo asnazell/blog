@@ -30,7 +30,7 @@ export class ViewAllPosts extends React.Component {
             <div className="post-summary">
               <img
                 className="post-summary-image"
-                src={`http://localhost:3000/${post.imgName}`}
+                src={`/${post.imgName}`}
                 alt="Blog Post Placeholder"
               />
 

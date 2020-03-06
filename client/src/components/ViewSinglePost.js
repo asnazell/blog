@@ -62,7 +62,7 @@ class ViewSinglePostClass extends React.Component {
         <div className="single-post-summary">
           <img
             className="single-post-summary-image"
-            src={`http://localhost:3000/${post.imgName}`}
+            src={`/${post.imgName}`}
             alt="Blog Post Placeholder"
           />
           <div className="post-summary-title">{post.title}</div>

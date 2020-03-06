@@ -60,7 +60,7 @@ export class NewPost extends React.Component {
   //   //   redirect: "follow",
   //   //   credentials: "same-origin"
   // };
-  //   fetch("http://localhost:3000/post/private/new", requestOptions).then(
+  //   fetch("/post/private/new", requestOptions).then(
   //     async data => {
   //       if (data.status === 201) {
   //         console.log("new post created");

@@ -115,7 +115,7 @@ export class PostEdit extends React.Component {
             <div className="form-label" />
             <img
               className="post-edit-image"
-              src={`http://localhost:3000/${this.state.existingFile}`}
+              src={`/${this.state.existingFile}`}
               alt="Blog Post Placeholder"
             />
           </div>
