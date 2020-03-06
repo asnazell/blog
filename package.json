@@ -5,7 +5,8 @@
   "main": "src/server.js",
   "scripts": {
     "server": "npx nodemon ./src/server.js",
-    "start": "node ./src/server.js"
+    "start": "node ./src/server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "dependencies": {
     "bcryptjs": "2.4.3",
