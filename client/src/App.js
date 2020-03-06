@@ -15,7 +15,7 @@ import { UploadFiles } from "./components/UploadFiles";
 import "./App.css";
 
 export const App = () => {
-  const LoggedInStatus = window.localStorage.getItem("isLoggedIn");
+  const LoggedInStatus = window.localStorage.getItem("isLoggedIn") || "0";
   const [isLoggedIn, setIsLoggedIn] = useState(LoggedInStatus);
 
   // //component did mount
